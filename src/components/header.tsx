@@ -3,11 +3,66 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { AnimatePresence, motion } from "motion/react"
 import { useNavigate } from "react-router";
-
 import { useAuth } from "../context/AuthContext";
 import  { UserAvatar } from "./userAvatar";
 import { useCart } from "../context/cartContext";
 import { HiMiniShoppingCart } from "react-icons/hi2";
+
+const LogoutModal = ({
+  onConfirm,
+  onCancel,
+}: {
+  onConfirm: () => void;
+  onCancel:  () => void;
+}) => (
+  <motion.div
+    className="fixed inset-0 z-[100] flex items-center justify-center px-4"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2 }}
+  >
+    {/* Backdrop */}
+    <motion.div
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+      onClick={onCancel}
+    />
+ 
+    {/* Modal card */}
+    <motion.div
+      className="relative bg-white rounded-2xl shadow-2xl p-6 w-full max-w-sm flex flex-col items-center gap-4"
+      initial={{ scale: 0.92, opacity: 0, y: 12 }}
+      animate={{ scale: 1,    opacity: 1, y: 0  }}
+      exit={{    scale: 0.92, opacity: 0, y: 12 }}
+      transition={{ type: "spring", stiffness: 340, damping: 28 }}
+    >
+ 
+     
+      <div className="text-center">
+        <p className="font-playfair text-xl font-bold text-ink">Signing out?</p>
+        <p className="text-sm text-ink-muted mt-1">
+          You'll need to sign back in to place orders or view your order history.
+        </p>
+      </div>
+ 
+      {/* Actions */}
+      <div className="flex flex-col sm:flex-row gap-3 w-full mt-1">
+        <button
+          onClick={onConfirm}
+          className="flex-1 rounded-full py-2.5 text-white text-sm font-semibold bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-300/30 hover:brightness-105 active:scale-95 transition-all"
+        >
+          Yes, sign out
+        </button>
+        <button
+          onClick={onCancel}
+          className="flex-1 rounded-full py-2.5 text-ink text-sm font-semibold border-2 border-slate-200 hover:border-slate-400 transition-all"
+        >
+          Stay signed in
+        </button>
+      </div>
+    </motion.div>
+  </motion.div>
+);
 
 
 export const Header = () => {
@@ -24,6 +79,7 @@ export const Header = () => {
     const toggleSideNav = () => {
         setSideNavOpen(!sideNavOpen)
     }
+     const [showLogout,    setShowLogout]    = useState(false);
      const menuNavigation = () =>{
         navigate("/menu")
      }
@@ -38,9 +94,17 @@ export const Header = () => {
      }
      const ordersNavigation = () => {
         navigate("/orders")
-     }  
+     } 
+    
+ 
+  const handleLogout = async () => {
+    setShowLogout(false);
+    await logout();
+  };
+ 
 
   return (
+    <>
    <header className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-lg border-b border-white/10  ring-1 ring-white/5 shadow-lg shadow-black/40 rounded-b-2xl">
       <nav className=" relative md:mx-auto max-w-7xl px-6 py-4 flex items-center justify-between text-foreground">
         <div className="">
@@ -84,12 +148,11 @@ export const Header = () => {
             Order Now
           </button>
 
-         <div className="flex items-center gap-2 cursor-pointer group" onClick={() =>{
-          if (window.confirm("Logout?")) logout();
-         }}>
-          <UserAvatar size="10"/>
-          
-         </div>
+        <div className="cursor-pointer shrink-0"
+                  onClick={() => setShowLogout(true)}
+                >
+                  <UserAvatar size="10" />
+                </div>
 
         
         </>
@@ -101,8 +164,15 @@ export const Header = () => {
               } catch (error) {
                 console.error("Error signing in with Google:", error);
               }
-            }} className="inline-flex items-center justify-center rounded-full px-6 py-3 text-white font-medium bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-500/30 transitionhover:brightness-105 active:scale-[0.98]
-          ">
+            }} className="inline-flex items-center justify-center rounded-full
+                    px-3 py-2 text-xs
+                    xs:px-5 xs:py-2.5 xs:text-sm
+                    sm:px-6 sm:py-3 sm:text-base
+                    text-white font-medium
+                    bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))]
+                    shadow-md shadow-orange-500/30 hover:brightness-105 active:scale-[0.98] transition-all
+                    whitespace-nowrap"
+          >
               Sign In
           </button>
         
@@ -134,6 +204,18 @@ export const Header = () => {
       </nav>
     
     </header>
+
+
+     <AnimatePresence>
+        {showLogout && (
+          <LogoutModal
+            onConfirm={handleLogout}
+            onCancel={() => setShowLogout(false)}
+          />
+        )}
+      </AnimatePresence>
+</>
+    
   )
 }
 
