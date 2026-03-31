@@ -4,13 +4,13 @@ A full-stack restaurant ordering platform** built for **practicing and using FIR
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 🔗https://crafted-pizza-project.vercel.app/
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Crafted Pizza is a modern digital solution tailored for a fast-growing restaurant business with multiple branches 
 
@@ -23,7 +23,7 @@ The platform delivers:
 
 ---
 
-## 🧱 Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -52,9 +52,9 @@ The platform delivers:
 
 ---
 
-## ✨ Core Features
+##  Core Features
 
-### 🧑‍🍳 Customer Experience
+### Customer Experience
 
 * **Landing Page**
 
@@ -96,7 +96,7 @@ The platform delivers:
 
 ---
 
-### 🛠️ Admin Dashboard
+###  Admin Dashboard
 
 * **Role-Based Access Control**
 
@@ -139,7 +139,7 @@ The platform delivers:
 
 ---
 
-## 🗄️ Data Architecture (Firestore)
+##  Data Architecture (Firestore)
 
 ### Collections:
 
@@ -156,7 +156,7 @@ The platform delivers:
 
 ---
 
-## 💳 M-Pesa Integration Flow
+##  M-Pesa Integration Flow
 
 
 Customer places order
@@ -178,7 +178,7 @@ Admin dashboard notifies instantly
 
 
 
-## 🖼️ Image Optimization (WebP)
+##  Image Optimization (WebP)
 
 * Converts images **client-side** using Canvas API
 * Supports all formats (JPEG, PNG, HEIC, AVIF)
@@ -192,7 +192,7 @@ Admin dashboard notifies instantly
 
 ---
 
-## 🔐 Authentication & Security
+##  Authentication & Security
 
 * **Google OAuth (Firebase Auth)**
 * No password storage
@@ -209,7 +209,7 @@ Admin dashboard notifies instantly
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -267,7 +267,7 @@ vercel --prod
 
 ---
 
-## 📋 Required Firestore Index
+##  Required Firestore Index
 
 | Field      | Order      |
 | ---------- | ---------- |
@@ -280,7 +280,7 @@ vercel --prod
 
 ---
 
-## 💸 Cost Efficiency
+##  Cost Efficiency
 
 At moderate scale (~1,000 orders/month):
 
@@ -289,7 +289,7 @@ At moderate scale (~1,000 orders/month):
 * Functions: Free tier
 * Auth: Free
 
-👉 Estimated cost: **$0/month**
+ Estimated cost: **$0/month**
 
 ---
 
@@ -303,7 +303,7 @@ At moderate scale (~1,000 orders/month):
 
 ---
 
-## 📄 License
+##  License
 
 This is a non-commercial personal project created for portfolio purposes only. 
 It is NOT affiliated with, owned by, or connected to any actual business entity. 
@@ -311,7 +311,7 @@ All content and imagery are used for demonstration purposes.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 Built as a **production-grade full-stack system** focusing on:
 
@@ -321,13 +321,17 @@ Built as a **production-grade full-stack system** focusing on:
 
 ---
 
-## 💡 Final Note
+##  Final Note
 
 This project demonstrates:
 
 * Real-time systems design
 * Payment integration in Africa (M-Pesa)
 * Full-stack engineering best practices
+
+* I'm open to any feedback on where the project can be improved.
+* You can also update the project features if you wish to.
+
 
 ---
 
