@@ -6,7 +6,7 @@ A full-stack restaurant ordering platform** built for **practicing and using FIR
 
 ## 🌐 Live Demo
 
-🔗
+🔗https://crafted-pizza-project.vercel.app/
 
 ---
 
