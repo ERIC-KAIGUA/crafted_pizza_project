@@ -223,8 +223,7 @@ Admin dashboard notifies instantly
 ### Installation
 
 ```bash
-TO BE ADJUSTED
-
+ clone project: https://github.com/ERIC-KAIGUA/crafted_pizza_project.git
 npm install
 
 cd functions
