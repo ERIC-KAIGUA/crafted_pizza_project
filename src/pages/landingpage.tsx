@@ -72,23 +72,42 @@ export const Landingpage = () => {
             <Header />
         </div>
 
-        <div className="mt-30 p-5 flex flex-col md:flex-row gap-4 bg-canvas">
-            <div className="flex flex-col lg:justify-center">
-              <h1 className="md: font-playfair font-semibold text-4xl text-ink">Freshly Baked, <span className="text-accent">Home Delivered</span></h1>
+         <div className="mt-30 p-5 flex flex-col md:flex-row gap-4 bg-canvas">
+            <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-4 items-center">
+                
+                <div className="flex flex-col lg:justify-center flex-1">
+                  <h1 className="font-playfair font-semibold text-4xl text-ink">
+                    Freshly Baked, <span className="text-accent">Home Delivered</span>
+                  </h1>
+                  <p className="text-wrap mt-5 max-w-xl text-ink">
+                    Chef-crafted meals prepared with the season's best ingredients, delivered to your door before the steam clears.
+                  </p>
+                  <div className="flex flex-row gap-3 mt-5">
+                    <button
+                      onClick={menuNavigation}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-white font-medium bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-500/30 hover:brightness-105 active:scale-[0.98]">
+                      Check our menu
+                    </button>
+                    <button
+                      onClick={aboutNavigation}
+                      className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-ink font-medium bg-transparent hover:border duration-300 ease-in-out hover:border-ink">
+                      Our Story
+                    </button>
+                  </div>
+                </div>
 
-               <p className="md: text-wrap  mt-5 max-w-xl text-ink">Chef-crafted meals prepared with the season's best ingredients, delivered to your door before the steam clears.</p>
+                <motion.div
+                  className="flex-1 mt-5 md:mt-0"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}>
+                  <img
+                    src={Pizza}
+                    alt="Home-made Pizza"
+                    className="w-full h-96 object-cover rounded-xl shadow-xl shadow-black/5" />
+                </motion.div>
 
-               <div className="flex flex-row gap-3 mt-5">
-                <button className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-white font-medium bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-500/30 transitionhover:brightness-105 active:scale-[0.98]" onClick={menuNavigation}>Check our menu</button>
-                <button className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-ink font-medium bg-transparent hover:border duration-300 ease-in-out hover:border-ink" onClick={aboutNavigation}>Our Story</button>
-               </div>
+              </div>
             </div>
-
-
-            <motion.div className="md: mt-5 lg: ml-0" animate={{y:[0,-10,0]}} transition={{duration: 3, repeat: Infinity, ease:"easeInOut"}}>
-              <img src={Pizza} alt="Home-made Pizza" className="w-full h-96 object-cover rounded-xl shadow-xl shadow-black/5" />
-            </motion.div>
-        </div>
 
         <div className=" flex flex-col bg-surface-subtle py-16">
            <h2 className="font-playfair text-center font-semibold text-3xl  mb-5 text-ink mt-15">Fan <span className="text-accent">Favourite</span></h2>
