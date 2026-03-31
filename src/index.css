@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* ============================= */
+  /* 🌞 Light Theme — Crafted Pizza */
+  /* ============================= */
+
+  /* --- Accent (brand & actions) --- */
+  /* Warm orange used for buttons, highlights, emphasis */
+  --color-accent: 255 68 0; /* Tailwind orange-500 */
+  --color-accent-soft: 250,163,7; /* Tailwind orange-300 */
+
+  /* --- Canvas (page background) --- */
+  /* Used for full-page gradients */
+  --color-canvas-start: 255 255 255; /* white */
+  --color-canvas-mid: 226 232 240;   /* slate-50 */
+  --color-canvas-end: 192, 214, 223;   /* slate-200 */
+
+  /* --- Surfaces (cards, nav, image frames) --- */
+  --color-surface: 255 255 255;
+  --color-surface-muted: 241 245 249; /* slate-100 */
+
+  /* --- Ink (text colors) --- */
+  --color-ink-primary: 15 23 42;   /* slate-900 */
+  --color-ink-secondary: 71 85 105; /* slate-600 */
+  --color-ink-tertiary: 100 116 139; /* slate-500 */
+
+  /* --- Borders & dividers --- */
+  --color-border-subtle: 226 232 240; /* slate-200 */
+}
+
+
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+/* Create custom utility classes manually */
+@layer utilities {
+  /* Accent */
+  .text-accent {
+    color: rgb(var(--color-accent));
+  }
+  .bg-accent {
+    background-color: rgb(var(--color-accent));
+  }
+
+  /* Canvas */
+  .bg-canvas {
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--color-canvas-start)),
+      rgb(var(--color-canvas-mid)),
+      rgb(var(--color-canvas-end))
+    );
+  }
+
+  /* Surfaces */
+  .bg-surface {
+    background-color: rgb(var(--color-surface));
+  }
+  .bg-surface-muted {
+    background-color: rgb(var(--color-surface-muted));
+  }
+  .bg-surface-subtle {
+    background-color: rgb(var(--color-canvas-end));
+  }
+
+  /* Text */
+  .text-ink {
+    color: rgb(var(--color-ink-primary));
+  }
+  .text-ink-muted {
+    color: rgb(var(--color-ink-secondary));
+  }
+  .text-ink-subtle {
+    color: rgb(var(--color-ink-tertiary));
+  }
+
+  /* Borders */
+  .border-subtle {
+    border-color: rgb(var(--color-border-subtle));
+  }
+}
+
+body {
+  /* background-color: rgb(var(--color-background)); */
+  font-family: var(--font-sans);
+}
+
+@keyframes marquee {
+   0% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(-25%);
+  }
+  55% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+/* Smooth theme transitions */
+*,
+*::before,
+*::after {
+  transition-property:
+    background-color,
+    color,
+    border-color,
+    box-shadow,
+    fill,
+    stroke;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*,
+*::before,
+*::after {
+  transition-delay: 20ms;
+}
