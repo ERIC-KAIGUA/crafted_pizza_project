@@ -1,6 +1,6 @@
 # Crafted Pizza — Full-Stack Restaurant Ordering System
 
-A full-stack restaurant ordering platform** built for **practicing and using FIREBASE as a backend**, enabling customers to browse menus, place orders, and pay via daraja M-Pesa — while giving admins real-time control over orders, menu items, and operations.
+A full-stack restaurant ordering platform built for **practicing and using FIREBASE as a backend**, enabling customers to browse menus, place orders, and pay via daraja M-Pesa — while giving admins real-time control over orders, menu items, and operations.
 
 ---
 
