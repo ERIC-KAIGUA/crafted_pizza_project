@@ -141,7 +141,7 @@ const PaymentSuccess = ({
 
     <button
       onClick={onGoHome}
-      className="mt-2 rounded-full px-8 py-3 text-white font-medium bg-gradient-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-300/30 hover:brightness-105 active:scale-95 transition-all"
+      className="mt-2 rounded-full px-8 py-3 text-white font-medium bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md shadow-orange-300/30 hover:brightness-105 active:scale-95 transition-all"
     >
       Back to Home
     </button>
