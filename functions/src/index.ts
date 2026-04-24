@@ -18,16 +18,7 @@ const DARAJA_CALLBACK_URL    = defineSecret("DARAJA_CALLBACK_URL");
 // ─── Config ───────────────────────────────────────────────────────────────────
 
 const DARAJA_BASE_URL = "https://sandbox.safaricom.co.ke";
-// Switch to production when ready:
-// const DARAJA_BASE_URL = "https://api.safaricom.co.ke";
 
-// ─── CORS helper ──────────────────────────────────────────────────────────────
-// Sets the required CORS headers on every response.
-// cors: true in onRequest options is NOT sufficient for Cloud Run —
-// the preflight OPTIONS request must be handled manually in the function body.
-//
-// When going live, replace "*" with your actual domain:
-// e.g. "https://craftedpizza.co.ke"
 
 const setCorsHeaders = (res: any) => {
   res.set("Access-Control-Allow-Origin", "*");

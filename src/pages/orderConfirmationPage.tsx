@@ -196,7 +196,7 @@ const PaymentFailed = ({
     <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xs">
       <button
         onClick={onRetry}
-        className="flex-1 rounded-full py-3 text-white font-medium bg-gradient-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md hover:brightness-105 active:scale-95 transition-all text-sm"
+        className="flex-1 rounded-full py-3 text-white font-medium bg-linear-to-r from-[rgb(var(--color-accent))] to-[rgb(var(--color-accent-soft))] shadow-md hover:brightness-105 active:scale-95 transition-all text-sm"
       >
         Try Again
       </button>

@@ -47,7 +47,7 @@ const QualityCard = ({
         <p className="text-sm text-ink-muted leading-relaxed max-w-xs mx-auto">{description}</p>
       </div>
 
-      {/* Decorative underline accent */}
+
       <div className="w-8 h-0.5 rounded-full bg-accent opacity-60 mt-1" />
     </motion.div>
   );
