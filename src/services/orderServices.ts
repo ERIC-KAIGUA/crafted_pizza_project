@@ -101,9 +101,9 @@ export const placeOrder = async (params: PlaceOrderParams): Promise<string> => {
 
 export const simulatePaymentSuccess = async (orderId: string): Promise<void> => {
   await updateDoc(doc(db, "orders", orderId), {
-    status:         "pending",       // kitchen can now see the order
+    status:         "pending",      
     paymentStatus:  "completed",
-    mpesaReceiptNo: `SIM${Date.now().toString().slice(-8)}`, // fake receipt number
+    mpesaReceiptNo: `SIM${Date.now().toString().slice(-8)}`, 
     updatedAt:      serverTimestamp(),
   });
 };
